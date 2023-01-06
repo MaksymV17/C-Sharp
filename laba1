@@ -1,1 +1,22 @@
-
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+// варіант 6
+namespace Laba1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter R: ");
+            double R = int.Parse(Console.ReadLine());
+            Console.Write("Enter H: ");
+            double H = int.Parse(Console.ReadLine());
+            
+            double V = Math.PI * Math.Pow(R,2) * H;
+            Console.WriteLine($"Result {V}");
+        }
+    }
+}
