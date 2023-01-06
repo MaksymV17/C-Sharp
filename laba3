@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Laba3
+{
+    internal class Program
+    {
+        static int IntLength(int a)
+        {
+            int n = 0;
+            while (a != 0)
+            {
+                n++;
+                a /= 10;
+            }
+            return n;
+        }
+        static void Main(string[] args)
+        {
+            int[] arr = new int[3];
+            int num;
+            while (true)
+            {
+                try
+                {
+                    num = int.Parse(Console.ReadLine());
+                    if (IntLength(num) == 3)
+                    {
+                        break;
+                    }
+                    throw new Exception();
+                }
+                catch
+                {
+                    Console.WriteLine("Enter a three-digit number!");
+                }
+            }
+
+            if (num % 10 == 0)
+            {
+                Console.WriteLine("false");
+
+            }
+            else
+            {
+                Console.WriteLine("true");
+            }
+        }
+    }
+}
