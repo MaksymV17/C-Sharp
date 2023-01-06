@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Laba_6
+{
+    class Program
+    {
+    
+    
+    static void Main()
+        {
+             // Задаємо розмір матриці
+            int n = Convert.ToInt32(Console.ReadLine());
+            int m = Convert.ToInt32(Console.ReadLine());
+            int[,] arr = new int[n, m];
+            // Заповнюємо матрицю
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < m; j++)
+                {
+                    arr[i , j] = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+            int max = arr[0, 0];
+            int min = arr[0, 0];
+            int[] min_max_location = new int[2];
+            // Знаходимо мінімальне і максимальне значення та номери їх рядків
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < m; j++)
+                {
+                    if(arr[i,j] > max)
+                    {
+                        max = arr[i, j];
+                        min_max_location[0] = i;
+                    }
+                    if (arr[i, j] < min)
+                    {
+                        min = arr[i, j];
+                        min_max_location[1] = i;
+                    }
+                }
+            }
+            // Міняємо місцями рядок з максимальним і мінімальним числом
+            int temp;
+            for (int i = 0; i < m; i++)
+            {
+                temp = arr[min_max_location[0], i];
+                arr[min_max_location[0], i] = arr[min_max_location[1], i];
+                arr[min_max_location[1], i] = temp;
+            }
+
+            // Виводимо фінальний масив
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < m; j++)
+                {
+                    Console.Write(arr[i, j] + "  ");
+                }
+                Console.WriteLine();
+            }
+        }*/
